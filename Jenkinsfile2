@@ -1,0 +1,9 @@
+node {
+ stage('SCM CHECKOUT'){
+  git url: 'https://github.com/RamuAnuGitHub/my-app'
+  }
+stage('compile-package'){
+  def mvnHOME= tool name: 'maven-3', type: 'maven'
+  sh "${mvnHOME}/bin/mvn package"
+  }
+ }
